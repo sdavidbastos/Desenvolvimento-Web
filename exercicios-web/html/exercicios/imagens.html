@@ -85,8 +85,8 @@
     mover(p, 1500, -550, 5, ()=>{
         console.log('Terminou!!!')
     })*/
-    function slider(){
-        const elementos = document.querySelectorAll('[wp-slider] > p')
+    function slider() {
+        const elementos = document.querySelectorAll('[wm-slider] > p')
         const slides = Array.from(elementos)
         exibirSlide(slides, slides[0])
     }
@@ -103,9 +103,10 @@
             exibirSlide(slides, getProximo(slides, slide))
         })
     }
-    function getProximo(lista, atual){
+    function getProximo(lista, atual) {
         const i = lista.indexOf(atual) + 1
-        return i < lista.lenght ? lista[i] : lista[0]
+        return i < lista.length ? lista[i] : lista[0]
     }
+
     slider()
 </script>
