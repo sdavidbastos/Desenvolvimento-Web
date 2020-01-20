@@ -1,0 +1,49 @@
+<!--Desafio é criar uma button e uma barra de progresso-->
+<video id="meuVideo" width="800px" height="450px" controlsList="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        seu browser não suporta a tag de vídeo.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso{
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .progresso > div{
+        background-color: red;
+        color: #fff;
+        font-size: 14px;
+        height: 100%;
+        width: 0%;
+    }
+</style>
+
+<script>
+    //Função trata o video para não ser possível fazer o dowload. play e pause támbem faz parte dela.
+    function configurarVideo(id) {
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false
+
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+        
+        setInterval(()=> {
+            const percentual = (video.currentTime/video.duration)*100
+            const barra = document.querySelector(`[wm-progresso=${id}] > div`)
+            barra.style.width = `${percentual}%`
+            barra.innerHTML = `${percentual.toFixed(1)}%`
+        }, 500)
+    }
+    configurarVideo('meuVideo')
+</script>
