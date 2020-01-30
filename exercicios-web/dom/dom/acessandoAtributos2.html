@@ -17,7 +17,28 @@
         </ul>
     </div>
     <script>
-        // ...
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log(lista)
+        console.log('Elemento "ul".............')
+        console.log('ChildNodes', lista.childNodes)
+        console.log('destino', lista.id)
+        console.log('destino', lista.destino)
+        console.log('getAttibute', lista.getAttribute('destino'))
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+        lista.setAttribute('destino', 'empresa')
+        console.log(lista.getAttribute('destino'))
+        lista.setAttribute('status', 'aberto')
+        console.log(lista.getAttribute('status'))
+        lista.removeAttribute('destino')
+        console.log(lista.hasAttribute('destino'))
+        console.log(lista.dataset.urgencia)
+        lista.dataset.urgencia = 4
+        console.log(lista.dataset.urgencia)
+        //cuidado 
+        const label = document.querySelector('label')
+        console.log(label.for)
+        console.log(label.htmlFor)
+        console.log(label.getAttribute('for'))
     </script>
 </body>
 
