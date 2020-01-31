@@ -1,0 +1,56 @@
+/* Flappy Bird */
+*{box-sizing: border-box;}
+@font-face{
+    font-family: 'Pixel';
+    src: url('../fonts/Pixel.ttf');
+}
+[wm-flappy]{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 400px;
+    width: 750px;
+    overflow: hidden;
+}
+[wm-flappy]{
+    border: solid 3px dodgerblue;
+    background-color: deepskyblue;
+}
+/* Passaro */
+.passaro{
+    position: absolute;
+    width: 60px;
+    left: calc(50% - 30px);
+}
+/* Obstáculo */
+.obstaculo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    right: 20%;
+}
+.obstaculo-top, .obstaculo-bottom{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.obstaculo-top{
+    justify-content: flex-end;
+}
+.obstaculo-top, .obstaculo-bottom{
+    background-image: linear-gradient(to right, green, greenyellow );
+    height: 35%;
+    width: 60px;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+}
+/* Borda dos canos */
+.obstaculo-entrada{
+    background-image: linear-gradient(to right, green, greenyellow );
+    height: 20px;
+    width: 75px;
+    border: solid 1px black;
+}
