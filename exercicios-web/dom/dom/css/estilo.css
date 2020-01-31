@@ -68,6 +68,7 @@ body {
 }
 /* Passaro */
 .tela img{
+    position: relative;
     height: 30px;
 }
 /* Obstáculo */
@@ -75,6 +76,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
+    right: 20%;
 }
 .obstaculo-top, .obstaculo-bottom{
     display: flex;
@@ -88,14 +91,14 @@ body {
 .obstaculo-top, .obstaculo-bottom{
     background-image: linear-gradient(to right, green, greenyellow );
     height: 35%;
-    width: 50px;
+    width: 60px;
     border-left: solid 1px black;
     border-right: solid 1px black;
 }
 /* Borda dos anos */
 .obstaculo-inicio{
     background-image: linear-gradient(to right, green, greenyellow );
-    height: 25px;
+    height: 20px;
     width: 75px;
     border: solid 1px black;
 }
