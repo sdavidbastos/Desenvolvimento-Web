@@ -31,6 +31,27 @@
         <button wm-submit>Pesquisar</button>
     </form>
     <script>
-        // ...
+    //    const submit = document.querySelector('[wm-submit]')
+    //    submit.onclick = function(e){
+    //         // Função abaixo para o comportamento padrão.
+    //        e.preventDefault()
+    //         // Muito recomendado fazer da maneira abaixo
+    //         const form = e.target.parentNode
+    //         const formData = new FormData(form)
+    //         formData.append('ajax', true)
+    //         console.log(formData.get('q'))
+    //    }
+       const form = document.forms[0]
+       form.onsubmit = function(e){ 
+           e.preventDefault()
+           const form = e.target
+           const formData = new FormData(form)
+           formData.append('ajax', true)
+           console.log(formData.get('q'))
+           console.log(formData.has('hl'))
+           for (let dado of formData){
+               console.log(dado)
+           }
+       } 
     </script>
 </body>

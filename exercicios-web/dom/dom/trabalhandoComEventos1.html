@@ -9,9 +9,28 @@
 
 <body class="conteudo exercicio">
     <div>
-        <a href="https://google.com.br">Google</a>
+        <!-- onclick="navegarEm5s(event)" -->
+        <a espera-um-pouco href="https://google.com.br">Google</a>
     </div>
     <script>
-        // ...
+        // Hard coded. Adicionando o evento na tag
+        function navegarEm5s(e){
+            console.log(e)
+            // Utiliza-se o e.preventDefault() para desabilitar o padrão e o evento aconteça como definimos
+            e.preventDefault()
+            console.log('Saindo em 5s...')
+            setTimeout(() => {
+                // Target é o elemento HTML que disparou o evento.
+                const link = e.target
+                window.location.href = link.href
+            }, 5000)
+        }
+        // Modo abaixo é eficaz, porém é implícito. Não da pra saber ao visualizar a tag que tem um evento JS
+        // const a = document.querySelector('a')
+        // a.onclick = navegarEm5s
+
+        //  Forma mais equilibrada, visto que está visível na tag que tem um evento acontecendo
+        const a = document.querySelector('[espera-um-pouco]')
+        a.onclick = navegarEm5s
     </script>
 </body>
