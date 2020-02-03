@@ -5,52 +5,55 @@
     src: url('../fonts/Pixel.ttf');
 }
 [wm-flappy]{
-    display: flex;
     position: relative;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 400px;
-    width: 750px;
+    height: 700px;
+    width: 1200px;
+    margin: 15px;
     overflow: hidden;
 }
 [wm-flappy]{
-    border: solid 3px dodgerblue;
-    background-color: deepskyblue;
+    border: solid 5px dodgerblue;
+    background-color: skyblue;
 }
 /* Passaro */
 .passaro{
     position: absolute;
     width: 60px;
     left: calc(50% - 30px);
+    bottom: 50%;
 }
-/* Obstáculo */
-.obstaculo{
+/* Barreira */
+.par-de-barreiras{
+    position: absolute;
     display: flex;
+    top: 0;
+    height: 100%;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
-    right: 20%;
 }
-.obstaculo-top, .obstaculo-bottom{
+.barreira{
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
 }
-.obstaculo-top{
-    justify-content: flex-end;
+.barreira .borda{
+    background: linear-gradient(90deg, #639301, #a5e82e);
+    height: 30px;
+    width: 130px;
+    border: 2px solid black;
 }
-.obstaculo-top, .obstaculo-bottom{
-    background-image: linear-gradient(to right, green, greenyellow );
-    height: 35%;
-    width: 60px;
-    border-left: solid 1px black;
-    border-right: solid 1px black;
+.barreira .corpo{
+    height: 150px;
+    width: 110px;
+    background: linear-gradient(90deg, #639301, #a5e82e);
+    border-right:  2px solid black;
+    border-left:  2px solid black;
 }
-/* Borda dos canos */
-.obstaculo-entrada{
-    background-image: linear-gradient(to right, green, greenyellow );
-    height: 20px;
-    width: 75px;
-    border: solid 1px black;
+.progresso{
+    position: absolute;
+    color: white;
+    top: 10px;
+    right: 10px;
+    font-family: Pixel;
+    font-size: 70px;
 }
