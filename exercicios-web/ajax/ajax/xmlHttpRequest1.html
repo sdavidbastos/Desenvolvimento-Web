@@ -31,13 +31,13 @@
             const linhas = estados.map(estado => {
                 const tdId = document.createElement('td')
                 tdId.innerHTML = estado.id
-
+                
                 const tdNome = document.createElement('td')
                 tdNome.innerHTML = estado.nome
-
+                
                 const tdSigla = document.createElement('td')
                 tdSigla.innerHTML = estado.sigla
-
+                
                 const tr = document.createElement('tr')
                 tr.appendChild(tdId)
                 tr.appendChild(tdNome)
