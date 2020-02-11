@@ -13,8 +13,30 @@
     <div id='conteudo1'></div>
     <div id='conteudo2'></div>
     <div id='conteudo3'></div>
+    <div>Sem id</div>
 
     <script>
-        // ...
+        // conteudo 1
+        $('#conteudo1').append('<p>1</p>')
+        //conteudo 2
+        const elementos = [
+            $('<li></li>').append('Arroz'),
+            $('<li>').append('Feijão'),
+            $('<li>').append('carne')
+        ]
+        //prepende insere os elemetnso antes da dos filhos.
+        const lista = $('<ul><li>Sorvete</li></ul>').prepend(elementos)
+       $('#conteudo2').append(lista)
+
+       //conteudo 3
+       $('#conteudo3').append(['<h1>1</h1>','<h1>2</h1>'])
+            .prepend('<h1>0</h1>')
+        //.html muda o conteudo criando um elemento
+        $('#conteudo3').html('<h1>123</h1>')
+        //.text insere o texto puro sem criar um elemento
+        $('#conteudo3').text('<h1>123</h1>')
+
+        //Alterando todos
+        $('div[id]').html('<strong>Todos!</strong>').css('color', 'black')
     </script>
 </body>
