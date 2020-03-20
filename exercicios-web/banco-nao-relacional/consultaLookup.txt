@@ -1,0 +1,28 @@
+{% comment %}
+match: Para pegar as empresas cujo o nome é bradesco.
+Lookup: Na collections estados localfield dentro da empresa estadoId
+forenfield: Fiel estrangeiro que queremo fazer o match.
+as: criado para não dar match em mais de um.
+unwind para tirar de dentro do array e criou um unico 
+{% endcomment %}
+db.empresas.aggregate([
+    {$match: {nome: "Bradesco"}},
+    {$lookup: {
+        from: "estados",
+        localField: "estadoId",
+        foreignField: "_id",
+        as: "estado"
+    }},
+    {$unwind: "$estado"}
+]).pretty()
+
+db.empresas.aggregate([
+    {$match: {nome: "Vale"}},
+]).pretty()
+    {$lookup: {
+        from: "estados",
+        localField: "cidadeId",
+        foreignField: "cidades._id",
+        as: "estado"
+    }}
+5e729816b0320c17a9d532ea

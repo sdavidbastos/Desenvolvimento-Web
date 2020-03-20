@@ -6,24 +6,9 @@
       "email": "david@gmail.com"
     },
     {
-      "id": 2,
-      "name": "gay",
-      "email": "bacelar@gmail.com"
-    },
-    {
-      "name": "Jonas",
-      "email": "jonas@gmail.com",
-      "id": 3
-    },
-    {
-      "name": "João",
-      "email": "joao@gmail.com",
-      "id": 4
-    },
-    {
-      "name": "Vinicius",
-      "email": "vinicius@gmail.com",
-      "id": 5
+      "name": "Puppy",
+      "email": "hugopuppy@gmail.com",
+      "id": 2
     }
   ]
 }
