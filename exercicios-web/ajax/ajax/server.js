@@ -2,8 +2,11 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const app = express()
 
+// express provê os arquivos da aplicação
 app.use(express.static('.'))
+// lê os dados de um submit e transforma em objeto
 app.use(bodyParser.urlencoded({extended: true}))
+// Caso venha json, converte para objeto
 app.use(bodyParser.json())
 
 const multer = require('multer')
